@@ -1,0 +1,159 @@
+:root {
+	/* https://graphicmama.com/blog/website-color-schemes/ */
+	--bg-color-primary: #f2f1ef;
+	--bg-color-secondary: #413f3d;
+	--bg-card: #d8cfd0;
+	--txt-color-primary: #000000;
+	--txt-color-secondary: #ffffff;
+	--box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	--border-radius: 0.4rem;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: var(--txt-color-primary);
+	background-color: var(--bg-color-primary);
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.img-fluid {
+	width: 100%;
+}
+
+.my-2 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.title {
+	text-align: center;
+}
+
+.search {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+input#input-search,
+select#filter-region {
+	margin: 0 auto;
+
+	height: 45px;
+	padding: 0 28px;
+	font-size: 1rem;
+	border: 1px solid #d0cfce;
+	outline: none;
+	&:focus {
+		border: 1px solid #008abf;
+		transition: 0.35s ease;
+		color: #008abf;
+		&::-webkit-input-placeholder {
+			transition: opacity 0.45s ease;
+			opacity: 0;
+		}
+		&::-moz-placeholder {
+			transition: opacity 0.45s ease;
+			opacity: 0;
+		}
+		&:-ms-placeholder {
+			transition: opacity 0.45s ease;
+			opacity: 0;
+		}
+	}
+}
+
+.search-icon {
+	position: relative;
+	float: left;
+	top: 15px;
+	right: -25px;
+	opacity: 0.8;
+}
+
+.countries {
+	text-align: center;
+}
+
+/*  grid cards */
+.grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 2rem;
+}
+
+.card {
+	background-color: var(--bg-card);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	overflow: hidden;
+}
+
+.card img {
+	border-top-left-radius: var(--border-radius);
+	border-top-right-radius: var(--border-radius);
+}
+
+.card-content {
+	padding: 1rem;
+	font-size: 0.75rem;
+}
+
+.card-content h3 {
+	font-size: 1rem;
+	margin-bottom: 0.25rem;
+}
+
+/* media */
+@media (max-width: 1000px) {
+	.grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 750px) {
+	.grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 600px) {
+	.search {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1rem;
+		width: 50%;
+	}
+
+	.search-icon {
+		top: 30px;
+		right: -5px;
+	}
+
+	select#filter-region {
+		width: 252px;
+	}
+	.grid {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+}

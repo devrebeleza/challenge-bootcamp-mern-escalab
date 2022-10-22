@@ -1,0 +1,36 @@
+@url = https://restcountries.com/
+@version = v3.1
+
+
+### /*************************************************************************/
+
+# get all
+GET {{url}}/{{version}}/all HTTP/1.1
+
+### You can filter the output of your request to include only the specified fields
+GET https://restcountries.com/v2/all?fields=name,capital,currencies
+
+
+### /*************************************************************************/
+
+@name = peru
+### get by name
+GET {{url}}/{{version}}/name/{{name}}?fields=name,capital,currencies HTTP/1.1
+
+
+### /*************************************************************************/
+### get currency
+get {{url}}/{{version}}/currency/dollar
+
+
+### /*************************************************************************/
+### get by region
+### REGION
+### Search by Region: Africa, Americas, Asia, Europe, Oceania. 
+### The search can be using the full region’s name or just part of it
+@region = Asia
+get {{url}}/{{version}}/region/{{region}}
+
+https://restcountries.com/v3.1/region/{region}
+https://restcountries.com/v3.1/region/europe
+https://restcountries.com/v3.1/region/ame
