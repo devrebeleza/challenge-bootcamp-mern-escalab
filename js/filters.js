@@ -34,21 +34,29 @@ selectRegion.addEventListener('change', async (e) => {
 
 const getDataFromCountry = async () => {
 	try {
-		let res = await fetch(`${URL}/${VERSION}/name/${countrySearch}${FILTERS}`);
-		if (res != null) {
-			const data = await res.json();
-			if (regionSearch != '') {
-				let dataFilter = data.filter((item) => {
-					if (item.region.indexOf(regionSearch) !== -1) {
-						return item;
-					}
-				});
-				createCardsCountries(dataFilter);
+		if (countrySearch.length > 0) {
+			let res = await fetch(`${URL}/${VERSION}/name/${countrySearch}${FILTERS}`);
+			if (res != null) {
+				const data = await res.json();
+				if (regionSearch != '') {
+					let dataFilter = data.filter((item) => {
+						if (item.region.indexOf(regionSearch) !== -1) {
+							return item;
+						}
+					});
+					createCardsCountries(dataFilter);
+				} else {
+					createCardsCountries(data);
+				}
 			} else {
-				createCardsCountries(data);
+				alert('No results!');
 			}
 		} else {
-			alert('No results!');
+			if (regionSearch != '') {
+				getDataFromRegion();
+			} else {
+				getData();
+			}
 		}
 	} catch (error) {
 		createCardsCountries([]);

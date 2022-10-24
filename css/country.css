@@ -1,0 +1,41 @@
+.return {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 2rem;
+}
+
+.grid-card {
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	background-color: var(--bg-card);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	overflow: hidden;
+}
+.card-name {
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+.card-columns {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.card-content {
+	font-size: 1rem;
+}
+
+.time-zones {
+	font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+	.card-content {
+		font-size: 0.85rem;
+	}
+}

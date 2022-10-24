@@ -28,6 +28,42 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	color: var(--txt-color-primary);
 	background-color: var(--bg-color-primary);
+	padding-bottom: 80px;
+}
+
+nav {
+	float: right;
+	padding-right: 1.5rem;
+	top: 0;
+	cursor: pointer;
+}
+a {
+	outline: none;
+	text-decoration: none;
+	padding: 2px 1px 0;
+}
+
+a:link {
+	color: #265301;
+}
+
+a:visited {
+	color: #437a16;
+}
+
+a:focus {
+	border-bottom: 1px solid;
+	/* background: #bae498; */
+}
+
+a:hover {
+	border-bottom: 1px solid;
+	/* background: #cdfeaa; */
+}
+
+a:active {
+	background: #265301;
+	color: #cdfeaa;
 }
 
 .container {
@@ -107,6 +143,18 @@ select#filter-region {
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
 	overflow: hidden;
+
+	overflow: hidden;
+	box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+	transition: transform 1s;
+}
+
+.card:hover {
+	box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+	transform: scale(1.2, 1.2);
+	opacity: 0.7;
+	background-color: transparent;
+	position: relative;
 }
 
 .card img {
@@ -122,6 +170,30 @@ select#filter-region {
 .card-content h3 {
 	font-size: 1rem;
 	margin-bottom: 0.25rem;
+}
+
+/* Footer */
+.footer {
+	background-color: var(--bg-color-secondary);
+	margin-top: 1rem;
+	width: 100%;
+	border-top: 1px solid #eaeaea;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: 1rem 0;
+}
+
+.footer a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+
+	color: var(--txt-color-secondary);
 }
 
 /* media */
@@ -155,5 +227,9 @@ select#filter-region {
 	}
 	.grid {
 		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+
+	.footer {
+		font-size: 0.85rem;
 	}
 }

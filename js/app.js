@@ -1,8 +1,3 @@
-// variables
-const URL = 'https://restcountries.com';
-const VERSION = 'v3.1';
-const FILTERS = '?fields=name,capital,region,population,flags';
-
 const countries = document.getElementById('countries');
 
 document.addEventListener('DOMContentLoaded', (ev) => {
