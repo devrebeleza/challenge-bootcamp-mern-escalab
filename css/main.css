@@ -1,5 +1,5 @@
-:root {
-	/* https://graphicmama.com/blog/website-color-schemes/ */
+/* :root {
+	 // https://graphicmama.com/blog/website-color-schemes/  
 	--bg-color-primary: #f2f1ef;
 	--bg-color-secondary: #413f3d;
 	--bg-card: #d8cfd0;
@@ -7,7 +7,7 @@
 	--txt-color-secondary: #ffffff;
 	--box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 	--border-radius: 0.4rem;
-}
+} */
 
 * {
 	margin: 0;
@@ -25,18 +25,50 @@ html {
 }
 
 body {
+	// to dark mode
+	--bg-color-primary: #f2f1ef;
+	--bg-color-secondary: #413f3d;
+	--bg-card: #d8cfd0;
+	--txt-color-primary: #000000;
+	--txt-color-secondary: #ffffff;
+	--box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	--border-radius: 0.4rem;
 	font-family: 'Montserrat', sans-serif;
 	color: var(--txt-color-primary);
 	background-color: var(--bg-color-primary);
 	padding-bottom: 80px;
+	transition: 1s;
+}
+
+body.dark-mode {
+	--bg-color-primary: #413f3d;
+	--bg-color-secondary: #f2f1ef;
+	--bg-card: #697184;
+	--txt-color-primary: #ffffff;
+	--txt-color-secondary: #000000;
 }
 
 nav {
 	float: right;
 	padding-right: 1.5rem;
 	top: 0;
-	cursor: pointer;
 }
+
+#btn-dark-mode {
+	background-color: var(--bg-color-primary);
+	color: var(--txt-color-primary);
+	outline: none;
+	border: none;
+	transition: 0.3s;
+	cursor: pointer;
+	opacity: 1;
+	font-size: 1.25rem;
+}
+
+.btn-dark-mode:hover {
+	opacity: 0.6;
+}
+
 a {
 	outline: none;
 	text-decoration: none;
